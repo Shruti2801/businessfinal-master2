@@ -1,13 +1,5 @@
 package com.example.business;
 
-import com.example.business.model.Product;
-import com.example.business.model.Service;
-import com.example.business.model.Company;
-import com.example.business.repository.ProductRepository;
-import com.example.business.repository.ServiceRepository;
-import com.example.business.repository.CompanyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

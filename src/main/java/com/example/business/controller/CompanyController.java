@@ -1,7 +1,6 @@
 package com.example.business.controller;
 
 import com.example.business.model.Company;
-import com.example.business.repository.ProductRepository;
 import com.example.business.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,9 +12,9 @@ import java.util.List;
 public class CompanyController {
     @Autowired
     private CompanyRepository repository;
-
-    @Autowired
-    private ProductRepository productRepository;
+//
+//    @Autowired
+//    private ProductRepository productRepository;
 
     @PostMapping
     public Company addCompany(@RequestBody Company student){

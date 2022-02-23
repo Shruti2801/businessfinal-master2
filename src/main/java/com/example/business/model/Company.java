@@ -20,96 +20,98 @@ public class Company {
     private int id;
 
 //    @Column(name = "COMPANY_NAME")
-    private String companyname;
-
-//    @Column(name = "TIMING")
-    private String timing;
-
-//    @Column(name = "ADDRESS")
-    private String address;
-
-//    @Column(name = "EMAIL")
-    private String email;
-
-//    @Column(name = "CONTACT_NO")
-    private  int contact;
+    private String name;
+    private String description;
+    private String tagline;
+    private  String logourl;
+    private  String website;
 
 
-    @OneToMany(targetEntity = Product.class,cascade = CascadeType.ALL)
-    @JoinColumn(name ="cp_fk",referencedColumnName = "id")
-    private List<Product> product;
 
-    @OneToMany(targetEntity = Service.class,cascade = CascadeType.ALL)
-    @JoinColumn(name ="cs_fk",referencedColumnName = "id")
-    private List<Service> service;
 
-//    private List<String> services;
+    @OneToMany(targetEntity = Product_service.class,cascade = CascadeType.ALL)
+    @JoinColumn(name ="cps_fk",referencedColumnName = "id")
+    private List<Product_service> product_services;
 
-    public Company(String address) {
-        this.address = address;
-    }
+//    @OneToMany(targetEntity = Sales_contact.class,cascade = CascadeType.ALL)
+//    @JoinColumn(name ="cs_fk",referencedColumnName = "id")
+//    private List<Sales_contact> sales_contacts;
 
-    public Company(int id, String companyname, String timing,String address,String email,int contact) {
+    @OneToMany(targetEntity = Branch.class,cascade = CascadeType.ALL)
+    @JoinColumn(name ="cb_fk",referencedColumnName = "id")
+    private List<Branch> branches;
+
+    public Company(int id, String name,String description, String tagline, String logourl, String website) {
         this.id = id;
-        this.address = address;
-        this.timing=timing;
-        this.companyname=companyname;
-        this.email=email;
-        this.contact=contact;
+        this.name=name;
+        this.description=description;
+        this.tagline=tagline;
+        this.logourl=logourl;
+        this.website=website;
     }
 
-    public List<Product> getProduct() {
-        return product;
+    public List<Branch> getBranches() {
+        return branches;
     }
 
-    public void setProduct(List<Product> product) {
-        this.product = product;
+    public void setBranches(List<Branch> branches) {
+        this.branches = branches;
     }
 
-    public List<Service> getService() {
-        return service;
+//    public List<Sales_contact> getSales_contacts() {
+//        return sales_contacts;
+//    }
+//
+//    public void setSales_contacts(List<Sales_contact> sales_contacts) {
+//        this.sales_contacts = sales_contacts;
+//    }
+
+    public List<Product_service> getProduct_services() {
+        return product_services;
     }
 
-    public void setService(List<Service> service) {
-        this.service = service;
+    public void setProduct_services(List<Product_service> product_services) {
+        this.product_services = product_services;
     }
 
-    public int getContact() {
-        return contact;
+    public String getWebsite() {
+        return website;
     }
 
-    public void setContact(int contact) {
-        this.contact = contact;
+    public void setWebsite(String website) {
+        this.website = website;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLogourl() {
+        return logourl;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLogourl(String logourl) {
+        this.logourl = logourl;
     }
 
-    public String getAddress() {
-        return address;
+    public String getTagline() {
+        return tagline;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setTagline(String tagline) {
+        this.tagline = tagline;
     }
 
-    public String getTiming() {
-        return timing;
-    }
-    public void setTiming(String timing) {
-        this.timing = timing;
+    public String getDescription() {
+        return description;
     }
 
-    public String getCompanyname() {
-        return companyname;
+    public void setDescription(String description) {
+        this.description = description;
     }
-    public void setCompanyname(String companyname) {
-        this.companyname = companyname;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getId() {
