@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/branch")
+@RequestMapping("/")
 public class BranchController {
 
     @Autowired
     private BranchRepository repository;
 
     @PostMapping
-    public Branch addCompany(@RequestBody Branch branch){
+    public Branch addBranch(@RequestBody Branch branch){
         return repository.save(branch);
 
     }

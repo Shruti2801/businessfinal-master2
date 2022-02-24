@@ -1,6 +1,7 @@
 package com.example.business.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Product_service {
@@ -10,8 +11,15 @@ public class Product_service {
     private String type;
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Company company;
+
+
+
+
+
+
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private Company company;
 
     public Product_service() {
     }
@@ -21,14 +29,6 @@ public class Product_service {
         this.name = name;
         this.type = type;
         this.description = description;
-    }
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
     }
 
     public String getDescription() {
@@ -63,3 +63,4 @@ public class Product_service {
         this.id = id;
     }
 }
+

@@ -1,5 +1,5 @@
 package com.example.business;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import springfox.documentation.builders.PathSelectors;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,8 +11,6 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 
-import static springfox.documentation.builders.PathSelectors.regex;
-
 import java.util.ArrayList;
 
 @Configuration
@@ -20,20 +18,21 @@ import java.util.ArrayList;
 public class SwaggerConfig {
 
     @Bean
-    public Docket atividadeApi() {
+    public Docket probizApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.atividades.apirest"))
-                .paths(regex("/api.*"))
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
                 .build()
                 .apiInfo(metaInfo());
     }
 
     private ApiInfo metaInfo() {
 
-        ApiInfo apiInfo = new ApiInfo(
-                "Atividades API REST",
-                "API REST de cadastro de atividades.",
+        ApiInfo apiInfo;
+        apiInfo = new ApiInfo(
+                "Probiz API REST",
+                "API REST de cadastro de probiz.",
                 "1.0",
                 "Terms of Service",
                 new Contact("João VR", "www.una.br/",

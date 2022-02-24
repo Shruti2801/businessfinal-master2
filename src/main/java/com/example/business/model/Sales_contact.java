@@ -1,26 +1,49 @@
+
 package com.example.business.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Sales_contact {
     @Id
     private int id;
-
     private String contact_person_name;
     private String designation;
+    private String person_qualification;
     private int contact_no1;
     private int contact_no2;
     private int contact_no3;
-    private String Email1;
-    private String Email2;
-    private String Email3;
+    private String Email_id1;
+    private String Email_id2;
+    private String Email_id3;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Branch branch;
+
+
+
+
+
+
+    //    @ManyToOne(fetch = FetchType.LAZY)
+//    private Branch branch;
+
+
 
     public Sales_contact() {
+    }
+
+    public Sales_contact(int id, String contact_person_name, String designation, String person_qualification, int contact_no1, int contact_no2, int contact_no3, String email_id1, String email_id2, String email_id3) {
+        this.id = id;
+        this.contact_person_name = contact_person_name;
+        this.designation = designation;
+        this.person_qualification = person_qualification;
+        this.contact_no1 = contact_no1;
+        this.contact_no2 = contact_no2;
+        this.contact_no3 = contact_no3;
+        Email_id1 = email_id1;
+        Email_id2 = email_id2;
+        Email_id3 = email_id3;
     }
 
     public int getId() {
@@ -31,56 +54,28 @@ public class Sales_contact {
         this.id = id;
     }
 
-    public Sales_contact(int id, String contact_person_name, String designation, int contact_no1, int contact_no2, int contact_no3, String email1, String email2, String email3) {
-        this.id = id;
-        this.contact_person_name = contact_person_name;
-        this.designation = designation;
-        this.contact_no1 = contact_no1;
-        this.contact_no2 = contact_no2;
-        this.contact_no3 = contact_no3;
-        Email1 = email1;
-        Email2 = email2;
-        Email3 = email3;
-
+    public String getEmail_id1() {
+        return Email_id1;
     }
 
-    public Branch getBranch() {
-        return branch;
+    public void setEmail_id1(String email_id1) {
+        Email_id1 = email_id1;
     }
 
-    public void setBranch(Branch branch) {
-        this.branch = branch;
-    }
-//    public Company getCompany() {
-//        return company;
-//    }
-//
-//    public void setCompany(Company company) {
-//        this.company = company;
-//    }
-
-    public String getEmail3() {
-        return Email3;
+    public String getEmail_id2() {
+        return Email_id2;
     }
 
-    public void setEmail3(String email3) {
-        Email3 = email3;
+    public void setEmail_id2(String email_id2) {
+        Email_id2 = email_id2;
     }
 
-    public String getEmail2() {
-        return Email2;
+    public String getEmail_id3() {
+        return Email_id3;
     }
 
-    public void setEmail2(String email2) {
-        Email2 = email2;
-    }
-
-    public String getEmail1() {
-        return Email1;
-    }
-
-    public void setEmail1(String email1) {
-        Email1 = email1;
+    public void setEmail_id3(String email_id3) {
+        Email_id3 = email_id3;
     }
 
     public int getContact_no3() {
@@ -121,5 +116,13 @@ public class Sales_contact {
 
     public void setContact_person_name(String contact_person_name) {
         this.contact_person_name = contact_person_name;
+    }
+
+    public String getPerson_qualification() {
+        return person_qualification;
+    }
+
+    public void setPerson_qualification(String person_qualification) {
+        this.person_qualification = person_qualification;
     }
 }
